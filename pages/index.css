@@ -2,17 +2,25 @@
 @import "../vendor/fonts/inter/inter.css";
 
 @import "../blocks/page/page.css";
+@import "../blocks/text/text.css";
 
 @import "../blocks/header/header.css";
 @import "../blocks/list/list.css";
 @import "../blocks/list/_theme/list_theme_lang-list.css";
 @import "../blocks/list/__item/list__item.css";
-@import "../blocks/link/link.css";
+@import "../blocks/interactive-element/interactive-element.css";
 @import "../blocks/header/__logo/header__logo.css";
 @import "../blocks/header/__line/header__line.css";
 
 @import "../blocks/content/content.css";
-
+@import "../blocks/profile/profile.css";
+@import "../blocks/profile/__avatar/profile__avatar.css";
+@import "../blocks/profile/__info/profile__info.css";
+@import "../blocks/profile/__info-inner/profile__info-inner.css";
+@import "../blocks/profile/__name/profile__name.css";
+@import "../blocks/profile/__edit-button/profile__edit-button.css";
+@import "../blocks/profile/__about/profile__about.css";
+@import "../blocks/profile/__add-button/profile__add-button.css";
 
 
 @import "../blocks/footer/footer.css";
