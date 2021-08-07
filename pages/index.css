@@ -30,13 +30,13 @@
 @import "../blocks/element/__description/element__description.css";
 @import "../blocks/element/__like/element__like.css";
 
+@import "../blocks/footer/footer.css";
+@import "../blocks/footer/__copyright/footer__copyright.css";
+
 @import "../blocks/popup/popup.css";
+@import "../blocks/popup/_opened/popup_opened.css";
 @import "../blocks/popup/__container/popup__container.css";
 @import "../blocks/popup/__input/popup__input.css";
 @import "../blocks/popup/__button/popup__button.css";
 @import "../blocks/popup/__button/_type/popup__button_type_submit.css";
 @import "../blocks/popup/__button/_type/popup__button_type_close.css";
-
-@import "../blocks/footer/footer.css";
-@import "../blocks/footer/__copyright/footer__copyright.css";
-
