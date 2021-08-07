@@ -6,7 +6,6 @@
 
 @import "../blocks/header/header.css";
 @import "../blocks/list/list.css";
-@import "../blocks/list/_theme/list_theme_lang-list.css";
 @import "../blocks/list/__item/list__item.css";
 @import "../blocks/interactive-element/interactive-element.css";
 @import "../blocks/header/__logo/header__logo.css";
@@ -22,10 +21,17 @@
 @import "../blocks/profile/__about/profile__about.css";
 @import "../blocks/profile/__add-button/profile__add-button.css";
 
+@import "../blocks/elements/elements.css";
+@import "../blocks/elements/__grid/elements__grid.css";
+@import "../blocks/element/element.css";
+@import "../blocks/element/__image/element__image.css";
+@import "../blocks/element/__description/element__description.css";
+@import "../blocks/element/__name/element__name.css";
+@import "../blocks/element/__like/element__like.css";
+
 
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__links/footer__links.css";
-@import "../blocks/list/_theme/list_theme_links.css";
 @import "../blocks/footer/__link/footer__link.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";
 
