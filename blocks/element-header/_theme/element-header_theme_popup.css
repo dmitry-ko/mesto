@@ -1,0 +1,7 @@
+.element-header_theme_popup {}
+
+@media screen and (max-width: 700px) {
+  .element-header_theme_popup {
+    font-size: 18px;
+  }
+}

@@ -32,42 +32,42 @@
           <li class="element list__item">
             <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск">
             <div class="element__description">
-              <h2 class="element__name text">Карачаевск</h2>
+              <h2 class="element-header text">Карачаевск</h2>
               <button class="element__like interactive-element"></button>
             </div>
           </li>
           <li class="element list__item">
             <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
             <div class="element__description">
-              <h2 class="element__name text">Гора Эльбрус</h2>
+              <h2 class="element-header text">Гора Эльбрус</h2>
               <button class="element__like interactive-element"></button>
             </div>
           </li>
           <li class="element list__item">
             <img class="element__image" src="./images/dombay.jpg" alt="Домбай">
             <div class="element__description">
-              <h2 class="element__name text">Домбай</h2>
+              <h2 class="element-header text">Домбай</h2>
               <button class="element__like interactive-element"></button>
             </div>
           </li>
           <li class="element list__item">
             <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
             <div class="element__description">
-              <h2 class="element__name text">Гора Эльбрус</h2>
+              <h2 class="element-header text">Гора Эльбрус</h2>
               <button class="element__like interactive-element"></button>
             </div>
           </li>
           <li class="element list__item">
             <img class="element__image" src="./images/dombay.jpg" alt="Домбай">
             <div class="element__description">
-              <h2 class="element__name text">Домбай</h2>
+              <h2 class="element-header text">Домбай</h2>
               <button class="element__like interactive-element"></button>
             </div>
           </li>
           <li class="element list__item">
             <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаево-Черкессия">
             <div class="element__description">
-              <h2 class="element__name text">Карачаево-Черкессия</h2>
+              <h2 class="element-header text">Карачаево-Черкессия</h2>
               <button class="element__like interactive-element"></button>
             </div>
           </li>
@@ -78,6 +78,16 @@
     <footer class="footer">
       <p class="footer__copyright text">&copy; 2021. Mesto Russia</p>
     </footer>
+
+    <section class="popup">
+      <form class="popup__container">
+        <h2 class="element-header element-header_theme_popup text">Редактировать профиль</h2>
+        <input id="name" name="name" type="text" class="popup__input" placeholder="Имя" required>
+        <input id="about" name="about" type="text" class="popup__input" placeholder="О себе" required>
+        <input type="submit" class="popup__button popup__button_type_submit interactive-element" value="Сохранить">
+        <button class="popup__button popup__button_type_close interactive-element"></button>
+      </form>
+    </section>
   </div>
 </body>
 </html>
