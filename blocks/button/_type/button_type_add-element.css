@@ -1,4 +1,4 @@
-.profile__add-button {
+.button_type_add-element {
   margin-left: auto;
   background-color: black;
   width: 150px;
@@ -7,13 +7,13 @@
   background-position: center;
   background-repeat: no-repeat;
   border: 2px solid #FFFFFF;
-  box-sizing: border-box;
   border-radius: 2px;
 }
 
 @media screen and (max-width: 700px) {
-  .profile__add-button {
+  .button_type_add-element {
     width: 100%;
     margin: 36px auto 0;
+    background-size: 16px 16px;
   }
 }

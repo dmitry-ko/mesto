@@ -1,33 +1,30 @@
-let editBtn = document.querySelector('.profile__edit-button');
+let editBtn = document.querySelector('.button_type_profile-edit');
 let popup = document.querySelector('.popup');
 
-let formElement = document.querySelector('.popup__container');
-
-let nameInput = formElement.querySelector('.popup__input[name=name]');
-let jobInput = formElement.querySelector('.popup__input[name=about]');
 let nameProfile = document.querySelector('.profile__name');
 let jobProfile = document.querySelector('.profile__about');
 
+let formElement = document.querySelector('.form_theme_profile-edit');
+let nameInput = formElement.querySelector('.form__input_theme_profile-edit[name=name]');
+let jobInput = formElement.querySelector('.form__input_theme_profile-edit[name=about]');
+
+let closeBtn = formElement.querySelector('.button_type_popup-close');
+
 
 function openPopup() {
-  nameInput.value = nameProfile.textContent;
-  jobInput.value = jobProfile.textContent;
-
-  popup.classList.toggle('popup_opened');
+  if (!popup.classList.contains('popup_opened')) {
+    nameInput.value = nameProfile.textContent;
+    jobInput.value = jobProfile.textContent;
+    popup.classList.add('popup_opened');
+  }
 }
 
-editBtn.addEventListener('click', openPopup);
 
-
-let closeBtn = formElement.querySelector('.popup__button_type_close');
-
-function closePopup(evt) {
-  evt.preventDefault();
-
-  popup.classList.toggle('popup_opened');
+function closePopup() {
+  if (popup.classList.contains('popup_opened')){
+    popup.classList.remove('popup_opened');
+  }
 }
-
-closeBtn.addEventListener('click', closePopup);
 
 
 function formSubmitHandler (evt) {
@@ -35,8 +32,10 @@ function formSubmitHandler (evt) {
 
   nameProfile.textContent = nameInput.value;
   jobProfile.textContent = jobInput.value;
-
-  popup.classList.toggle('popup_opened');
+  closePopup();
 }
 
+
 formElement.addEventListener('submit', formSubmitHandler);
+closeBtn.addEventListener('click', closePopup);
+editBtn.addEventListener('click', openPopup);

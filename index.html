@@ -10,21 +10,20 @@
 <body>
   <div class="page">
     <header class="header">
-      <div class="header__logo"></div>
-      <div class="header__line"></div>
+      <img src="./images/header-logo.svg" class="header__logo" alt="Mesto Russia">
     </header>
 
     <main class="content">
       <section class="profile">
-        <div class="profile__avatar"></div>
+        <img src="./images/kusto.jpg" class="profile__avatar" alt="Аватар Жака Кусто">
         <div class="profile__info">
           <div class="profile__info-inner">
             <h1 class="profile__name text">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button interactive-element"></button>
+            <button class="button button_type_profile-edit interactive-element" type="button"></button>
           </div>
           <p class="profile__about text">Исследователь океана</p>
         </div>
-        <button class="profile__add-button interactive-element"></button>
+        <button class="button button_type_add-element interactive-element" type="button"></button>
       </section>
 
       <section class="elements">
@@ -33,42 +32,42 @@
             <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск">
             <div class="element__description">
               <h2 class="element-header text">Карачаевск</h2>
-              <button class="element__like interactive-element"></button>
+              <button class="element__like interactive-element button" type="button"></button>
             </div>
           </li>
           <li class="element list__item">
             <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
             <div class="element__description">
               <h2 class="element-header text">Гора Эльбрус</h2>
-              <button class="element__like interactive-element"></button>
+              <button class="element__like interactive-element button" type="button"></button>
             </div>
           </li>
           <li class="element list__item">
             <img class="element__image" src="./images/dombay.jpg" alt="Домбай">
             <div class="element__description">
               <h2 class="element-header text">Домбай</h2>
-              <button class="element__like interactive-element"></button>
+              <button class="element__like interactive-element button" type="button"></button>
             </div>
           </li>
           <li class="element list__item">
             <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
             <div class="element__description">
               <h2 class="element-header text">Гора Эльбрус</h2>
-              <button class="element__like interactive-element"></button>
+              <button class="element__like interactive-element button" type="button"></button>
             </div>
           </li>
           <li class="element list__item">
             <img class="element__image" src="./images/dombay.jpg" alt="Домбай">
             <div class="element__description">
               <h2 class="element-header text">Домбай</h2>
-              <button class="element__like interactive-element"></button>
+              <button class="element__like interactive-element button" type="button"></button>
             </div>
           </li>
           <li class="element list__item">
             <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаево-Черкессия">
             <div class="element__description">
               <h2 class="element-header text">Карачаево-Черкессия</h2>
-              <button class="element__like interactive-element"></button>
+              <button class="element__like interactive-element button" type="button"></button>
             </div>
           </li>
         </ul>
@@ -79,15 +78,19 @@
       <p class="footer__copyright text">&copy; 2021. Mesto Russia</p>
     </footer>
 
-    <section class="popup">
-      <form class="popup__container">
-        <h2 class="element-header element-header_theme_popup text">Редактировать профиль</h2>
-        <input id="name" name="name" type="text" class="popup__input" placeholder="Имя" required>
-        <input id="about" name="about" type="text" class="popup__input" placeholder="О себе" required>
-        <input type="submit" class="popup__button popup__button_type_submit interactive-element" value="Сохранить">
-        <button class="popup__button popup__button_type_close interactive-element"></button>
-      </form>
-    </section>
+    <div class="popup">
+      <div class="popup__container">
+        <form class="form form_theme_profile-edit" name="profile-edit">
+          <h2 class="element-header element-header_theme_popup text">Редактировать профиль</h2>
+          <input id="name" name="name" type="text" class="form__input form__input_theme_profile-edit"
+                 placeholder="Имя" required>
+          <input id="about" name="about" type="text" class="form__input form__input_theme_profile-edit"
+                 placeholder="О себе" required>
+          <button type="submit" class="button button_type_popup-submit interactive-element">Сохранить</button>
+          <button class="button button_type_popup-close interactive-element" type="button"></button>
+        </form>
+      </div>
+    </div>
   </div>
   <script src="scripts/index.js"></script>
 </body>

@@ -1,10 +1,8 @@
 .element__like {
-  border: none;
   background-color: white;
   background-image: url("../../../images/like.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  box-sizing: border-box;
   width: 22px;
   min-width: 22px;
   height: 19px;

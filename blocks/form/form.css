@@ -1,0 +1,5 @@
+.form {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+}
