@@ -12,18 +12,14 @@ let closeBtn = formElement.querySelector('.button_type_popup-close');
 
 
 function openPopup() {
-  if (!popup.classList.contains('popup_opened')) {
-    nameInput.value = nameProfile.textContent;
-    jobInput.value = jobProfile.textContent;
-    popup.classList.add('popup_opened');
-  }
+  nameInput.value = nameProfile.textContent;
+  jobInput.value = jobProfile.textContent;
+  popup.classList.add('popup_opened');
 }
 
 
 function closePopup() {
-  if (popup.classList.contains('popup_opened')){
-    popup.classList.remove('popup_opened');
-  }
+  popup.classList.remove('popup_opened');
 }
 
 

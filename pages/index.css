@@ -36,8 +36,6 @@
 @import "../blocks/popup/popup.css";
 @import "../blocks/popup/_opened/popup_opened.css";
 @import "../blocks/form/form.css";
-@import "../blocks/form/_theme/form_theme_profile-edit.css";
 @import "../blocks/form/__input/form__input.css";
-@import "../blocks/form/__input/_theme/form__input_theme_profile-edit.css";
 @import "../blocks/button/_type/button_type_popup-submit.css";
 @import "../blocks/button/_type/button_type_popup-close.css";
