@@ -29,6 +29,8 @@
 @import "../blocks/element/__image/element__image.css";
 @import "../blocks/element/__description/element__description.css";
 @import "../blocks/element/__like/element__like.css";
+@import "../blocks/element/__like/_active/element__like_active.css";
+
 
 @import "../blocks/footer/footer.css";
 @import "../blocks/footer/__copyright/footer__copyright.css";
@@ -39,3 +41,7 @@
 @import "../blocks/form/__input/form__input.css";
 @import "../blocks/button/_type/button_type_popup-submit.css";
 @import "../blocks/button/_type/button_type_popup-close.css";
+
+@import "../blocks/figure/figure.css";
+@import "../blocks/figure/__image/figure__image.css";
+@import "../blocks/figure/__caption/figure__caption.css";

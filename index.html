@@ -28,48 +28,48 @@
 
       <section class="elements">
         <ul class="elements__grid list">
-          <li class="element list__item">
-            <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск">
-            <div class="element__description">
-              <h2 class="element-header text">Карачаевск</h2>
-              <button class="element__like interactive-element button" type="button"></button>
-            </div>
-          </li>
-          <li class="element list__item">
-            <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-            <div class="element__description">
-              <h2 class="element-header text">Гора Эльбрус</h2>
-              <button class="element__like interactive-element button" type="button"></button>
-            </div>
-          </li>
-          <li class="element list__item">
-            <img class="element__image" src="./images/dombay.jpg" alt="Домбай">
-            <div class="element__description">
-              <h2 class="element-header text">Домбай</h2>
-              <button class="element__like interactive-element button" type="button"></button>
-            </div>
-          </li>
-          <li class="element list__item">
-            <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-            <div class="element__description">
-              <h2 class="element-header text">Гора Эльбрус</h2>
-              <button class="element__like interactive-element button" type="button"></button>
-            </div>
-          </li>
-          <li class="element list__item">
-            <img class="element__image" src="./images/dombay.jpg" alt="Домбай">
-            <div class="element__description">
-              <h2 class="element-header text">Домбай</h2>
-              <button class="element__like interactive-element button" type="button"></button>
-            </div>
-          </li>
-          <li class="element list__item">
-            <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаево-Черкессия">
-            <div class="element__description">
-              <h2 class="element-header text">Карачаево-Черкессия</h2>
-              <button class="element__like interactive-element button" type="button"></button>
-            </div>
-          </li>
+<!--          <li class="element list__item">-->
+<!--            <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск">-->
+<!--            <div class="element__description">-->
+<!--              <h2 class="element-header text">Карачаевск</h2>-->
+<!--              <button class="element__like interactive-element button" type="button"></button>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="element list__item">-->
+<!--            <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">-->
+<!--            <div class="element__description">-->
+<!--              <h2 class="element-header text">Гора Эльбрус</h2>-->
+<!--              <button class="element__like interactive-element button" type="button"></button>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="element list__item">-->
+<!--            <img class="element__image" src="./images/dombay.jpg" alt="Домбай">-->
+<!--            <div class="element__description">-->
+<!--              <h2 class="element-header text">Домбай</h2>-->
+<!--              <button class="element__like interactive-element button" type="button"></button>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="element list__item">-->
+<!--            <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">-->
+<!--            <div class="element__description">-->
+<!--              <h2 class="element-header text">Гора Эльбрус</h2>-->
+<!--              <button class="element__like interactive-element button" type="button"></button>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="element list__item">-->
+<!--            <img class="element__image" src="./images/dombay.jpg" alt="Домбай">-->
+<!--            <div class="element__description">-->
+<!--              <h2 class="element-header text">Домбай</h2>-->
+<!--              <button class="element__like interactive-element button" type="button"></button>-->
+<!--            </div>-->
+<!--          </li>-->
+<!--          <li class="element list__item">-->
+<!--            <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаево-Черкессия">-->
+<!--            <div class="element__description">-->
+<!--              <h2 class="element-header text">Карачаево-Черкессия</h2>-->
+<!--              <button class="element__like interactive-element button" type="button"></button>-->
+<!--            </div>-->
+<!--          </li>-->
         </ul>
       </section>
     </main>
@@ -92,6 +92,30 @@
       </div>
     </div>
   </div>
+
+  <template id="card">
+    <li class="element list__item">
+      <div class="element__image"></div>
+      <div class="element__description">
+        <h2 class="element-header text"></h2>
+        <button class="element__like interactive-element button" type="button"></button>
+      </div>
+    </li>
+  </template>
+
+  <template id="image-popup">
+    <div class="popup">
+      <div class="popup__container">
+        <figure class="figure">
+          <img class="figure__image">
+          <figcaption class="figure__caption text"></figcaption>
+          <button class="button button_type_popup-close interactive-element" type="button"></button>
+        </figure>
+
+      </div>
+    </div>
+  </template>
+
   <script src="scripts/index.js"></script>
 </body>
 </html>
