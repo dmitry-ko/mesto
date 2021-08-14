@@ -35,16 +35,30 @@
       <p class="footer__copyright text">&copy; 2021. Mesto Russia</p>
     </footer>
 
-    <div class="popup">
+    <div class="popup popup_theme_profile-edit">
       <div class="popup__container">
-        <form class="form form_theme_profile-edit" name="profile-edit">
+        <form class="form" name="profile-edit">
           <h2 class="element-header element-header_theme_popup text">Редактировать профиль</h2>
-          <input id="name" name="name" type="text" class="form__input form__input_theme_profile-edit"
+          <input id="name" name="name" type="text" class="form__input"
                  placeholder="Имя" required>
-          <input id="about" name="about" type="text" class="form__input form__input_theme_profile-edit"
+          <input id="about" name="about" type="text" class="form__input"
                  placeholder="О себе" required>
           <button type="submit" class="button button_type_popup-submit interactive-element">Сохранить</button>
           <button class="button button_type_popup-close interactive-element" type="button"></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_theme_add-card">
+      <div class="popup__container">
+        <form class="form" name="add-card">
+          <h2 class="element-header element-header_theme_popup text">Новое место</h2>
+          <input id="title" name="title" type="text" class="form__input"
+                 placeholder="Название" required>
+          <input id="link" name="link" type="text" class="form__input"
+                 placeholder="Ссылка на картинку" required>
+          <button type="submit" class="button button_type_popup-submit interactive-element">Сохранить</button>
+          <button class="button button_type_popup-close interactive-element" type="reset"></button>
         </form>
       </div>
     </div>
