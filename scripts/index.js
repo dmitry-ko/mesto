@@ -63,6 +63,10 @@ function createCard(name, link) {
   card.querySelector('.element__like').addEventListener('click',
       evt => evt.target.classList.toggle('element__like_active'));
 
+  card.querySelector('.button_type_delete-element').addEventListener('click', evt => {
+    evt.target.closest('.element').remove();
+  });
+
   return card;
 }
 

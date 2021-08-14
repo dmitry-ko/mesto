@@ -3,7 +3,7 @@
   top: -40px;
   right: -40px;
   background-image: url("../../../images/popup-close.svg");
-  z-index: 2;
+  z-index: 3;
   background-size: contain;
   background-position: center;
   width: 32px;
