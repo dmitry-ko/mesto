@@ -92,6 +92,8 @@ function initProfileEditPopup() {
 
   formElement.querySelector('.button_type_popup-close').addEventListener('click',
       evt => closeCurrentPopup(evt.target));
+
+  formElement.style.transitionDuration = '0.3s';  // иначе opacity отрабатывает при загрузке страницы и попап виден
 }
 
 function initAddCardPopup() {
@@ -113,6 +115,8 @@ function initAddCardPopup() {
 
   formElement.querySelector('.button_type_popup-close').addEventListener('click',
     evt => closeCurrentPopup(evt.target));
+
+  formElement.style.transitionDuration = '0.3s';  // иначе opacity отрабатывает при загрузке страницы и попап виден
 }
 
 initialCards.forEach((card) => cards.append(createCard(card.name, card.link)));
