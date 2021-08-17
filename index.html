@@ -39,10 +39,16 @@
       <div class="popup__container">
         <form class="form" name="profile-edit">
           <h2 class="element-header element-header_theme_popup text">Редактировать профиль</h2>
-          <input id="name" name="name" type="text" class="form__input"
-                 placeholder="Имя" required>
-          <input id="about" name="about" type="text" class="form__input"
-                 placeholder="О себе" required>
+          <label class="form__field">
+            <input id="name" name="name" type="text" class="form__input"
+                   placeholder="Имя" required>
+            <span class="form__input-error name-error"></span>
+          </label>
+          <label class="form__field">
+            <input id="about" name="about" type="text" class="form__input"
+                   placeholder="О себе" required>
+            <span class="form__input-error about-error"></span>
+          </label>
           <button type="submit" class="button button_type_popup-submit interactive-element">Сохранить</button>
           <button class="button button_type_popup-close interactive-element" type="button"></button>
         </form>
@@ -53,11 +59,17 @@
       <div class="popup__container">
         <form class="form" name="add-card">
           <h2 class="element-header element-header_theme_popup text">Новое место</h2>
-          <input id="title" name="title" type="text" class="form__input"
-                 placeholder="Название" required>
-          <input id="link" name="link" type="text" class="form__input"
-                 placeholder="Ссылка на картинку" required>
-          <button type="submit" class="button button_type_popup-submit interactive-element">Сохранить</button>
+          <label class="form__field">
+            <input id="title" name="title" type="text" class="form__input"
+                   placeholder="Название" required>
+            <span class="form__input-error title-error"></span>
+          </label>
+          <label class="form__field">
+            <input id="link" name="link" type="text" class="form__input"
+                   placeholder="Ссылка на картинку" required>
+            <span class="form__input-error title-error"></span>
+          </label>
+          <button type="submit" class="button button_type_popup-submit interactive-element">Создать</button>
           <button class="button button_type_popup-close interactive-element" type="reset"></button>
         </form>
       </div>
