@@ -117,9 +117,43 @@ function initAddCardPopup() {
   popup.style.transitionDuration = '0.3s';  // иначе opacity отрабатывает при загрузке страницы и попап виден
 }
 
+function closePopupWithResetForms(popupElement) {
+  if (!popupElement.closest('.popup')) return;
+
+  closeCurrentPopup(popupElement);
+  const forms = Array.from(popupElement.closest('.popup').querySelectorAll('.form'));
+  forms.forEach(form => {
+    if (form) form.reset();
+  });
+}
+
+function enablePopupsEnclosureEvents() {
+  const popups = Array.from(document.querySelectorAll('.popup'));
+  popups.forEach(popup => {
+    popup.addEventListener('click', () => closePopupWithResetForms(popup));
+    document.addEventListener('keydown', evt => {
+      if (evt.key === 'Escape') closePopupWithResetForms(popup);
+    });
+
+    popup.querySelector('.popup__container').addEventListener('click', evt => evt.stopPropagation());
+  });
+}
+
+
+enablePopupsEnclosureEvents();
 initProfileEditPopup();
 initAddCardPopup();
 initImagePopup();
+// enableValidation({
+//   formSelector: '.form',
+//   inputSelector: '.form__input',
+//   submitButtonSelector: '.button_type_popup-submit',
+//   inactiveButtonClass: 'button_inactive',
+//   inputErrorClass: 'form__input-error',
+//   errorClass: 'form__input-error_active'
+// });
 initialCards.forEach((card) => cards.append(createCard(card.name, card.link)));
+
+
 
 
