@@ -8,24 +8,23 @@ function enableValidation(parameters) {
 }
 
 function setValidationEvents(form, parameters) {
-  const inputs = Array.from(form.querySelectorAll(parameters.inputSelector));
-  const button = form.querySelector(parameters.submitButtonSelector);
-  toggleButtonState(inputs, button, parameters);
+  const [inputs, submitButton] = getFormElements(form, parameters);
+  toggleButtonState(inputs, submitButton, parameters);
 
   inputs.forEach(input => {
     input.addEventListener('input', () => {
       isValid(form, input, parameters);
-      toggleButtonState(inputs, button, parameters);
+      toggleButtonState(inputs, submitButton, parameters);
     });
     input.addEventListener('change', () => {
       isValid(form, input, parameters);
-      toggleButtonState(inputs, button, parameters);
+      toggleButtonState(inputs, submitButton, parameters);
     });
   });
 
   form.addEventListener('reset', () => {
     inputs.forEach(input => hideInputError(form, input, parameters));
-    toggleButtonState(inputs, button, parameters);
+    toggleButtonState(inputs, submitButton, parameters);
   });
 }
 
@@ -67,11 +66,16 @@ function hideInputError(form, input, parameters) {
   errorElement.textContent = '';
 }
 
+function getFormElements(form, parameters) {
+  const inputs = Array.from(form.querySelectorAll(parameters.inputSelector));
+  const submitButton = form.querySelector(parameters.submitButtonSelector);
+
+  return [inputs, submitButton];
+}
 
 function validateForm(form, parameters) {
-  const inputs = Array.from(form.querySelectorAll(parameters.inputSelector));
-  const button = form.querySelector(parameters.submitButtonSelector);
-  toggleButtonState(inputs, button, parameters);
+  const [inputs, submitButton] = getFormElements(form, parameters);
+  toggleButtonState(inputs, submitButton, parameters);
 
   inputs.forEach(input => {
     isValid(form, input, parameters);
