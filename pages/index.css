@@ -36,12 +36,13 @@
 @import "../blocks/footer/__copyright/footer__copyright.css";
 
 @import "../blocks/popup/popup.css";
+@import "../blocks/popup/__container/popup__container.css";
 @import "../blocks/popup/_opened/popup_opened.css";
 @import "../blocks/form/form.css";
 @import "../blocks/form/__field/form__field.css";
 @import "../blocks/form/__input/form__input.css";
-@import "../blocks/form/__input/_type/form__input_type_error.css";
 @import "../blocks/form/__input-error/form__input-error.css";
+@import "../blocks/form/__input/_type/form__input_type_error.css";
 @import "../blocks/form/__input-error/_active/form__input-error_active.css";
 @import "../blocks/button/_type/button_type_popup-submit.css";
 @import "../blocks/button/_type/button_type_popup-close.css";

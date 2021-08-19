@@ -4,8 +4,8 @@
   font-weight: normal;
   font-size: 12px;
   line-height: 1.25;
-  min-height: 15px;
 
   color: red;
   margin: 5px 0 0;
+  padding: 0;
 }
