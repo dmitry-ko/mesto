@@ -16,25 +16,29 @@ function setValidationEvents(form, parameters) {
       isValid(form, input, parameters);
       toggleButtonState(inputs, submitButton, parameters);
     });
-    input.addEventListener('change', () => {
-      isValid(form, input, parameters);
-      toggleButtonState(inputs, submitButton, parameters);
-    });
   });
 
   form.addEventListener('reset', () => {
     inputs.forEach(input => hideInputError(form, input, parameters));
-    toggleButtonState(inputs, submitButton, parameters);
+    deactivateButton(submitButton, parameters);
   });
+}
+
+function deactivateButton(button, parameters) {
+  button.classList.add(parameters.inactiveButtonClass);
+  button.setAttribute('disabled', true);
+}
+
+function activateButton(button, parameters) {
+  button.removeAttribute('disabled')
+  button.classList.remove(parameters.inactiveButtonClass);
 }
 
 function toggleButtonState(inputs, button, parameters) {
   if (hasInvalidInput(inputs)) {
-    button.classList.add(parameters.inactiveButtonClass);
-    button.setAttribute('disabled', true)
+    deactivateButton(button, parameters);
   } else {
-    button.removeAttribute('disabled')
-    button.classList.remove(parameters.inactiveButtonClass);
+    activateButton(button, parameters);
   }
 }
 
