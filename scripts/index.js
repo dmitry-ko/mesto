@@ -1,32 +1,7 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
+import initialCards from './initial-cards.js';
 
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
 
 const validationParameters = {
   inputSelector: '.form__input',
@@ -42,6 +17,8 @@ const cardTemplateSelector = '#card';
 const cards = document.querySelector('.elements__grid');
 
 const imagePopup = document.querySelector('.popup_theme_image');
+const imagePopupImage = imagePopup.querySelector('.figure__image');
+const imagePopupCaption = imagePopup.querySelector('.figure__caption');
 let currentPopup;
 
 function getFormsObject() {
@@ -55,8 +32,8 @@ function getFormsObject() {
 }
 
 function openImagePopup(link, name) {
-  imagePopup.querySelector('.figure__image').src = link;
-  imagePopup.querySelector('.figure__caption').textContent = name;
+  imagePopupImage.src = link;
+  imagePopupCaption.textContent = name;
   setPopupOpened(imagePopup);
 }
 function setPopupOpened(elem) {
@@ -169,9 +146,10 @@ function enableValidation() {
   });
 }
 
+function createCard(name, link) {
+  const cardElement = new Card(name, link, cardTemplateSelector, openImagePopup);
+  return cardElement.createCard();
+}
 initPopups();
 enableValidation();
-initialCards.forEach((card) => {
-  const cardElement = new Card(card.name, card.link, cardTemplateSelector, openImagePopup);
-  cards.append(cardElement.createCard());
-});
+initialCards.forEach(card => cards.append(createCard(card.name, card.link)));

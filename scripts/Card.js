@@ -8,7 +8,8 @@ export default class Card {
   createCard() {
     this._card = this._cardTemplate.querySelector('.element').cloneNode(true);
     this._card.querySelector('.element-header').textContent = this._name;
-    this._card.querySelector('.element__image').style.backgroundImage = `url(${this._link})`;
+    this._image = this._card.querySelector('.element__image');
+    this._image.style.backgroundImage = `url(${this._link})`;
 
     this._setEventListeners();
 
@@ -16,7 +17,7 @@ export default class Card {
   }
 
   _setEventListeners() {
-    this._card.querySelector('.element__image').addEventListener('click', () => {
+    this._image.addEventListener('click', () => {
       this._openPopup();
     });
 
