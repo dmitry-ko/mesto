@@ -1,21 +1,22 @@
 export default class Popup {
   constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector);
+    this._setTransitionDurations()
   }
 
   open() {
     this._popup.classList.add('popup_opened');
     document.addEventListener('keydown', this._handleEscClose);
-  }
+  };
 
   close() {
     this._popup.classList.remove('popup_opened');
     document.removeEventListener('keydown', this._handleEscClose);
-  }
+  };
 
-  _handleEscClose(evt) {
+  _handleEscClose = evt => {
     if (evt.key === 'Escape') this.close();
-  }
+  };
 
   setEventListeners() {
     this._popup.addEventListener('click', evt => {
@@ -26,5 +27,9 @@ export default class Popup {
         this.close();
       }
     });
-  }
+  };
+
+  _setTransitionDurations() {
+    this._popup.style.transitionDuration = '0.3s';  // иначе opacity отрабатывает при загрузке страницы и попап виден
+  };
 }

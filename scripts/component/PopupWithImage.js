@@ -8,9 +8,9 @@ export default class PopupWithImage extends Popup {
     this.setEventListeners();
   }
 
-  open({ link, name }) {
+  open = ({ link, name }) => {
     this._img.src = link;
     this._caption.textContent = name;
     super.open();
-  }
+  };
 }

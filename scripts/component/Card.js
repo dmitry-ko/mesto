@@ -38,6 +38,7 @@ export default class Card {
   }
 
   _openPopup() {
-    this._handleCardClick(this._link, this._name);
+    this._handleCardClick({link: this._link,
+                           name: this._name});
   }
 }
