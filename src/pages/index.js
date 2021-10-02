@@ -1,8 +1,8 @@
-import Card from "../component/Card.js";
-import "../../pages/index.css";
-import FormValidator from "../component/FormValidator.js";
-import PopupWithForm from "../component/PopupWithForm.js";
-import PopupWithImage from "../component/PopupWithImage.js";
+import Card from "../scripts/component/Card.js";
+import "./index.css";
+import FormValidator from "../scripts/component/FormValidator.js";
+import PopupWithForm from "../scripts/component/PopupWithForm.js";
+import PopupWithImage from "../scripts/component/PopupWithImage.js";
 import {initialCards,
         validationParameters,
         formPopupSelectors,
@@ -10,12 +10,12 @@ import {initialCards,
         formSelector,
         nameProfileSelector,
         jobProfileSelector,
-        cardTemplateSelector} from '../utils/constants.js';
-import UserInfo from "../component/UserInfo.js";
-import Section from "../component/Section.js";
+        cardTemplateSelector} from '../scripts/utils/constants.js';
+import UserInfo from "../scripts/component/UserInfo.js";
+import Section from "../scripts/component/Section.js";
 
 
-const forms = getFormsObject();
+const formValidators = getFormsObject();
 const cards = new Section({items: initialCards,
                                         renderer: createCard},
                                         '.elements__grid');
@@ -34,7 +34,7 @@ const profilePopup = new PopupWithForm(
 const editBtn = document.querySelector('.button_type_profile-edit');
 editBtn.addEventListener('click', () => {
   profilePopup.open(userInfo.getUserInfo());
-  forms['profile-edit'].validate();
+  formValidators['profile-edit'].validate();
 });
 
 const addCardPopup = new PopupWithForm(
@@ -62,7 +62,7 @@ function getFormsObject() {
 }
 
 function enableValidation() {
-  Object.values(forms).forEach(form => {
+  Object.values(formValidators).forEach(form => {
     form.enableValidation();
   });
 }
