@@ -13,7 +13,7 @@
 
   <main class="content">
     <section class="profile">
-      <img src="<%=require('./images/kusto.jpg')%>" class="profile__avatar" alt="Аватар Жака Кусто">
+      <img src="<%=require('./images/kusto.jpg')%>" class="profile__avatar" alt="Аватар пользователя">
       <div class="profile__info">
         <div class="profile__info-inner">
           <h1 class="profile__name text">Жак-Ив Кусто</h1>
@@ -82,6 +82,16 @@
       </figure>
     </div>
   </div>
+
+  <div class="popup popup_theme_confirm_delete">
+    <div class="popup__container">
+      <form class="form" name="add-card">
+        <h2 class="element-header element-header_theme_popup text">Вы уверены?</h2>
+        <button type="submit" class="button button_type_popup-submit interactive-element">Да</button>
+        <button class="button button_type_popup-close interactive-element" type="reset"></button>
+      </form>
+    </div>
+  </div>
 </div>
 
 <template id="card">
@@ -89,7 +99,11 @@
     <div class="element__image"></div>
     <div class="element__description">
       <h2 class="element-header text"></h2>
-      <button class="element__like interactive-element button" type="button"></button>
+      <div class="element__inner">
+        <button class="element__like interactive-element button" type="button"></button>
+        <p class="element__like-counter text">0</p>
+      </div>
+
     </div>
     <button class="button button_type_delete-element interactive-element" type="button"></button>
   </li>

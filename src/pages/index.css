@@ -28,8 +28,10 @@
 @import "../blocks/element/element.css";
 @import "../blocks/element/__image/element__image.css";
 @import "../blocks/element/__description/element__description.css";
+@import "../blocks/element/__inner/element__inner.css";
 @import "../blocks/element/__like/element__like.css";
 @import "../blocks/element/__like/_active/element__like_active.css";
+@import "../blocks/element/__like-counter/element__like-counter.css";
 
 
 @import "../blocks/footer/footer.css";
