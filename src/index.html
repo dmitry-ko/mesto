@@ -13,7 +13,9 @@
 
   <main class="content">
     <section class="profile">
-      <img src="<%=require('./images/kusto.jpg')%>" class="profile__avatar" alt="Аватар пользователя">
+      <div class="profile__avatar-cover">
+        <img src="<%=require('./images/kusto.jpg')%>" class="profile__avatar" alt="Аватар пользователя">
+      </div>
       <div class="profile__info">
         <div class="profile__info-inner">
           <h1 class="profile__name text">Жак-Ив Кусто</h1>
@@ -53,6 +55,21 @@
     </div>
   </div>
 
+  <div class="popup popup_theme_avatar-edit">
+    <div class="popup__container">
+      <form class="form" name="avatar-edit">
+        <h2 class="element-header element-header_theme_popup text">Обновить аватар</h2>
+        <label class="form__field">
+          <input id="avatar" name="avatar" type="url" class="form__input" placeholder="Ссылка на картинку"
+                 required>
+          <span class="form__input-error avatar-error"></span>
+        </label>
+        <button type="submit" class="button button_type_popup-submit interactive-element">Сохранить</button>
+        <button class="button button_type_popup-close interactive-element" type="reset"></button>
+      </form>
+    </div>
+  </div>
+
   <div class="popup popup_theme_add-card">
     <div class="popup__container">
       <form class="form" name="add-card">
@@ -83,9 +100,9 @@
     </div>
   </div>
 
-  <div class="popup popup_theme_confirm_delete">
+  <div class="popup popup_theme_confirm-delete">
     <div class="popup__container">
-      <form class="form" name="add-card">
+      <form class="form" name="confirm-delete">
         <h2 class="element-header element-header_theme_popup text">Вы уверены?</h2>
         <button type="submit" class="button button_type_popup-submit interactive-element">Да</button>
         <button class="button button_type_popup-close interactive-element" type="reset"></button>

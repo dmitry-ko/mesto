@@ -1,0 +1,28 @@
+.profile__avatar-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile__avatar-cover::before {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  content: url("../../../images/edit-avatar.svg");
+  opacity: 0;
+  transition: opacity .2s linear;
+}
+
+.profile__avatar-cover:hover:before {
+  opacity: 1;
+}
