@@ -58,18 +58,17 @@ export default class Card {
       this._openPopup();
     });
 
-    this._card.querySelector('.element__like').addEventListener('click',this._handleLikeClick.bind(this));
+    this._card.querySelector('.element__like').addEventListener('click', () => {
+      this._handleLikeClick(this);
+    });
 
-    this._card.querySelector('.button_type_delete-element').addEventListener('click',
-      this._handleDeleteClick.bind(this));
+    this._card.querySelector('.button_type_delete-element').addEventListener('click', () => {
+      this._handleDeleteClick(this);
+    });
   }
 
   removeCard() {
     this._card.closest('.element').remove();
-  }
-
-  _toggleLike(evt) {
-    return evt.target.classList.toggle('element__like_active');
   }
 
   _openPopup() {

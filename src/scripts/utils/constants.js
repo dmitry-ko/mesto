@@ -10,8 +10,9 @@ const nameProfileSelector = '.profile__name';
 const jobProfileSelector = '.profile__about';
 const profileAvatarSelector = '.profile__avatar';
 export const cardTemplateSelector = '#card';
-export const apiParams = {cohort: 'cohort-28',
-                          token: 'd93ad35a-40c0-49e6-a03e-6ca8ae7228d2'};
+export const apiParams = {baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-28',
+                          headers: {authorization: 'd93ad35a-40c0-49e6-a03e-6ca8ae7228d2',
+                                    'Content-Type': 'application/json'}};
 
 export const imagePopupSelectors = {imageSelector,
                                     captionSelector};

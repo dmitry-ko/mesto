@@ -22,10 +22,6 @@ const formValidators = getFormsObject();
 let cards;
 const userInfo = new UserInfo(userInfoSelectors);
 api.getMe()
-  .then(res => {
-    if (res.ok) return res.json();
-    return Promise.reject(res.status);
-  })
   .then(data => {
     userInfo.setInfo(data);
     getCards();
@@ -38,10 +34,6 @@ const confirmDeletePopup = new PopupConfirmDelete('.popup_theme_confirm-delete',
 
 function getCards() {
   api.getCards()
-    .then(res => {
-      if (res.ok) return res.json();
-      return Promise.reject(res.status);
-    })
     .then(data => {
       cards = new Section({
           items: data,
@@ -64,17 +56,13 @@ const profilePopup = new PopupWithForm(
     evt.preventDefault();
     profilePopup.setProcessingStatus(true);
     api.updateProfile({ name, about })
-      .then(res => {
-        if (res.ok) return res.json();
-        return Promise.reject(res.status);
-      })
       .then(data => {
         userInfo.setTextFields(data);
+        profilePopup.close();
       })
       .catch(err => console.log(err))
       .finally(() => {
         profilePopup.setProcessingStatus(false);
-        profilePopup.close()
       })
     },
   formPopupSelectors);
@@ -93,17 +81,14 @@ const editAvatarPopup = new PopupWithForm(
     evt.preventDefault();
     editAvatarPopup.setProcessingStatus(true);
     api.updateAvatar({ avatar })
-      .then(res => {
-        if (res.ok) return res.json();
-        return Promise.reject(res.status);
-      })
       .then(data => {
         userInfo.setAvatar(data);
+        editAvatarPopup.close();
       })
       .catch(err => console.log(err))
       .finally(() => {
         editAvatarPopup.setProcessingStatus(false);
-        editAvatarPopup.close()
+
       })
   },
   formPopupSelectors);
@@ -115,26 +100,19 @@ editAvatarBtn.addEventListener('click', () => {
   formValidators['avatar-edit'].validate();
 });
 
-
-
-
 const addCardPopup = new PopupWithForm(
   '.popup_theme_add-card',
   (evt,  { title, link }) => {
     evt.preventDefault();
     addCardPopup.setProcessingStatus(true);
     api.addCard({name: title, link})
-      .then(res => {
-        if (res.ok) return res.json();
-        return Promise.reject(res.status);
-      })
       .then(data => {
         cards.addItem(createCard(data));
+        addCardPopup.close();
       })
       .catch(err => console.log(err))
       .finally(() => {
         addCardPopup.setProcessingStatus(false);
-        addCardPopup.close()
       })
   },
   formPopupSelectors);
@@ -150,6 +128,7 @@ function getFormsObject() {
   const formsObject = {};
   forms.forEach(form => {
     const formValidator = new FormValidator(validationParameters, form);
+    if (formValidator.formName === 'confirm-delete') return;
     formsObject[formValidator.formName] = formValidator;
   });
   return formsObject;
@@ -161,32 +140,22 @@ function enableValidation() {
   });
 }
 
-function deleteCardHandler() {
-  const cardId = this.getCardId();
-  const removeCardHandle = this.removeCard.bind(this);
+function deleteCardHandler(cardElement) {
   confirmDeletePopup.open((evt) => {
     evt.preventDefault();
-    api.deleteCard(cardId)
-      .then(res => {
-        if (res.ok) return Promise.resolve();
-        return Promise.reject(res.status);
-      })
+    api.deleteCard(cardElement.getCardId())
       .then(() => {
-        removeCardHandle();
+        cardElement.removeCard();
+        confirmDeletePopup.close();
       })
-      .catch(err => console.log(err))
-      .finally(() => confirmDeletePopup.close());
+      .catch(err => console.log(err));
   });
 }
 
-function likeCardHandler() {
-  api.likeCard(this.getCardId(), !this.isLiked())
-    .then(res => {
-      if (res.ok) return res.json();
-      return Promise.reject(res.status);
-    })
+function likeCardHandler(cardElement) {
+  api.likeCard(cardElement.getCardId(), !cardElement.isLiked())
     .then(data => {
-      this.setLiked(!this.isLiked(), data.likes.length);
+      cardElement.setLiked(!cardElement.isLiked(), data.likes.length);
     })
     .catch(err => console.log(err));
 }
